@@ -1,0 +1,21 @@
+buildscript {
+  repositories {
+    mavenCentral()
+    maven {
+      url "https://oss.sonatype.org/content/groups/public"
+    }
+  }
+
+  def gradleAndroidAnnotationsPluginVersion = "0.4.0.BUILD-SNAPSHOT"
+
+  dependencies {
+    classpath "net.ealden.gradle.plugins:gradle-androidannotations-plugin:$gradleAndroidAnnotationsPluginVersion"
+  }
+}
+
+apply plugin: "androidannotations"
+apply plugin: "idea"
+
+androidEmulatorStart {
+  avdName = "2.2"
+}
